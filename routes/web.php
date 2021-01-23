@@ -26,3 +26,9 @@ Route::resource('products', ProductController::class);
 //Route::resource('dashboard', ProductController::class,'dashboard');
 Route::get('/', [ProductController::class, 'dashboard']);
 Route::get('/dashboard', [ProductController::class, 'dashboard']);
+
+Route::get('/packages', [ProductController::class, 'packages']);
+Route::get('/flights', [ProductController::class, 'flights']);
+Route::get('/customers', [ProductController::class, 'customers']);
+Route::get('/sales', [ProductController::class, 'sales']);
+Route::get('/purchase', [ProductController::class, 'purchase']);

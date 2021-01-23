@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -67,48 +69,49 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link active">
-              <!-- <i class="nav-icon fas fa-tachometer-alt"></i> -->
+            <a href="#" class="nav-link">
+              
               <p>
               MAIN NAVIGATION
-                <!-- <i class="right fas fa-angle-left"></i> -->
+                
               </p>
             </a>           
           </li>
           <li class="nav-item">
             <a href="/dashboard" class="nav-link">
-              <i class="fa fa-home"></i>
+              <i class="fa fa-home nav-icon"></i>               
               <p>
               Dashboard                
               </p>
             </a>
-          </li>   
+          </li>           
+           
           <li class="nav-item">
             <a href="/products" class="nav-link">
-            <i class="fab fa-product-hunt"></i>
+            <i class="fab fa-product-hunt nav-icon"></i>
               <p>
               Products                
               </p>
             </a>
           </li>  
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="fa fa-briefcase"></i>
+            <a href="/packages" class="nav-link">
+              <i class="fa fa-briefcase nav-icon"></i>
               <p>
               Packages                
               </p>
             </a>
           </li>  
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="fa fa-plane"></i>
+            <a href="/flights" class="nav-link">
+              <i class="fa fa-plane nav-icon"></i>
               <p>
               Flight Bookings                
               </p>
             </a>
           </li>  
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="/customers" class="nav-link">
               <i class="fa fa-address-book"></i>
               <p>
               Customers                
@@ -116,7 +119,7 @@
             </a>
           </li>  
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="/sales" class="nav-link">
               <i class="fa fa-shopping-cart"></i>
               <p>
               Sales                
@@ -124,7 +127,7 @@
             </a>
           </li>  
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="/purchase" class="nav-link">
               <i class="fa fa-shopping-basket"></i>
               <p>
               Purchase                
@@ -261,5 +264,22 @@
 
 <!-- PAGE SCRIPTS -->
 <script src="/dist/js/pages/dashboard2.js"></script>
+
+`<script>
+$(document).ready(function() {
+/** add active class and stay opened when selected */
+var url = window.location;
+
+// for sidebar menu entirely but not cover treeview
+$('ul.nav-sidebar a').filter(function() {
+return this.href == url;
+}).addClass('active');
+
+// for treeview
+$('ul.nav-treeview a').filter(function() {
+return this.href == url;
+}).parentsUntil(".nav-sidebar > .nav-treeview").addClass('menu-open').prev('a').addClass('active');
+})
+</script>
 </body>
 </html>

@@ -109,4 +109,27 @@ class ProductController extends Controller
     {   
       return view('products.dashboard');
     }
+
+    public function packages()
+    {   
+      return view('products.packages');
+    }
+    public function flights()
+    {   
+      return view('flights');
+    }
+    public function customers()
+    {   
+      return view('products.customers');
+    }
+
+    public function sales()
+    {   
+      return view('products.sales');
+    }
+    public function purchase()
+    {   
+      return view('purchase');
+    }
+    
 }
