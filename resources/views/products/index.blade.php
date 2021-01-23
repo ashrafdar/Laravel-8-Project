@@ -1,10 +1,11 @@
-@extends('products.layout')
+<!-- @extends('products.layout') -->
+ @extends('master')
  
-@section('content')
+@section('main')
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Laravel 8 CRUD Example from scratch</h2>
+                 <h2>List of Products</h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('products.create') }}"> Create New Product</a>

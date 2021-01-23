@@ -14,11 +14,15 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () 
+// {
+//     return view('welcome');
+// });
 
 //Route::resource('games/create', 'GameController');
 
 //Route::get('/games', [GameController::class, 'create']);
 Route::resource('products', ProductController::class);
+//Route::resource('dashboard', ProductController::class,'dashboard');
+Route::get('/', [ProductController::class, 'dashboard']);
+Route::get('/dashboard', [ProductController::class, 'dashboard']);

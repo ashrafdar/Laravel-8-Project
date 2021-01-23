@@ -6,6 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Laravel 8 CRUD Tutorial</title>
   <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" />
+  
+  
+
 </head>
 <body>
   <div class="container">
