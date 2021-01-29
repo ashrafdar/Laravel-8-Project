@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,13 +23,16 @@ use App\Http\Controllers\ProductController;
 //Route::resource('games/create', 'GameController');
 
 //Route::get('/games', [GameController::class, 'create']);
-Route::resource('products', ProductController::class);
+Route::resource('/products', ProductController::class);
 //Route::resource('dashboard', ProductController::class,'dashboard');
-Route::get('/', [ProductController::class, 'dashboard']);
-Route::get('/dashboard', [ProductController::class, 'dashboard']);
+//Route::get('/', [ProductController::class, 'dashboard']);
+//Route::get('/dashboard', [ProductController::class, 'dashboard']);
+Route::get('/', [AdminController::class, 'dashboard']);
+Route::get('admin/packages', [AdminController::class, 'packages']);
+Route::get('/flights', [AdminController::class, 'flights']);
+Route::get('/customers', [AdminController::class, 'customers']);
+Route::get('/sales', [AdminController::class, 'sales']);
+Route::get('/purchase', [AdminController::class, 'purchase']);
+//Route::resource('admin', AdminController::class);
 
-Route::get('/packages', [ProductController::class, 'packages']);
-Route::get('/flights', [ProductController::class, 'flights']);
-Route::get('/customers', [ProductController::class, 'customers']);
-Route::get('/sales', [ProductController::class, 'sales']);
-Route::get('/purchase', [ProductController::class, 'purchase']);
+

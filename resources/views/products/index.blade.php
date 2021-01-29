@@ -9,7 +9,7 @@
             </div>
             <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('products.create') }}"> Create New Product</a>
-            </div>
+            </div>            
         </div>
     </div>
    
@@ -23,13 +23,15 @@
         <tr>
             <th>No</th>
             <th>Name</th>
+            <th>Category</th>
             <th>Details</th>
             <th width="280px">Action</th>
-        </tr>
+        </tr>      
         @foreach ($products as $product)
         <tr>
             <td>{{ ++$i }}</td>
-            <td>{{ $product->name }}</td>
+            <td>{{ $product->productName }}</td>
+            <td>{{ $product->name}}</td>
             <td>{{ $product->detail }}</td>
             <td>
                 <form action="{{ route('products.destroy',$product->id) }}" method="POST">
@@ -48,6 +50,6 @@
         @endforeach
     </table>
   
-    {!! $products->links() !!}
+   
       
 @endsection

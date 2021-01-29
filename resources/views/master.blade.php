@@ -3,6 +3,12 @@
 
 <head>
 
+<Style>
+.active a{
+    color: #5bc0de !important;
+}
+</Style>
+
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -69,39 +75,32 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link">
-              
+            <a href="#" class="nav-link">              
               <p>
-              MAIN NAVIGATION
-                
+              MAIN NAVIGATION                
               </p>
             </a>           
-          </li>
-          <li class="nav-item">
-            <a href="/dashboard" class="nav-link">
-              <i class="fa fa-home nav-icon"></i>               
-              <p>
-              Dashboard                
+          </li>        
+                    
+            <!-- <li class="{{ Request::is('products.index') ? 'active' : '' }}">   -->
+            <li class="{{ (Request::route()->getName())=='products.index' ? 'active' : '' }}">           
+            <a href="{{ route('products.index') }}"  class="nav-link"> 
+            <i class="fab fa-product-hunt"></i>
+              <p>              
+              Products                           
               </p>
             </a>
-          </li>           
-           
-          <li class="nav-item">
-            <a href="/products" class="nav-link">
-            <i class="fab fa-product-hunt nav-icon"></i>
-              <p>
-              Products                
-              </p>
-            </a>
-          </li>  
-          <li class="nav-item">
-            <a href="/packages" class="nav-link">
+          </li> 
+
+          <li class="{{ (Request::route()->getName())=='packages' ? 'active' : '' }}">
+          <a href="{{ url('admin/packages') }}"  class="nav-link"> 
               <i class="fa fa-briefcase nav-icon"></i>
-              <p>
-              Packages                
+              <p>                 
+              packages                       
               </p>
             </a>
-          </li>  
+          </li>
+            
           <li class="nav-item">
             <a href="/flights" class="nav-link">
               <i class="fa fa-plane nav-icon"></i>
@@ -265,7 +264,7 @@
 <!-- PAGE SCRIPTS -->
 <script src="/dist/js/pages/dashboard2.js"></script>
 
-`<script>
+<!-- <script>
 $(document).ready(function() {
 /** add active class and stay opened when selected */
 var url = window.location;
@@ -280,6 +279,6 @@ $('ul.nav-treeview a').filter(function() {
 return this.href == url;
 }).parentsUntil(".nav-sidebar > .nav-treeview").addClass('menu-open').prev('a').addClass('active');
 })
-</script>
+</script> -->
 </body>
 </html>

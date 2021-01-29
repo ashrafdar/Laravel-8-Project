@@ -14,7 +14,7 @@
    
 @if ($errors->any())
     <div class="alert alert-danger">
-        <strong>Whoops!</strong> There were some problems with your input.<br><br>
+        <strong></strong> <br><br>
         <ul>
             @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
@@ -39,6 +39,23 @@
                 <textarea class="form-control" style="height:150px" name="detail" placeholder="Detail"></textarea>
             </div>
         </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Category:</strong>
+                <select class="form-control" name="categoryId">
+    <option>Select Item</option>
+    @foreach ($items as $key => $value)
+        <option value="{{ $key }}" {{ ( $key == $selectedID) ? 'selected' : '' }}> 
+            {{ $value }} 
+        </option>
+    @endforeach    
+</select>
+            </div>
+        </div>
+
+        
+
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Submit</button>
         </div>
